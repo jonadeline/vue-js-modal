@@ -413,7 +413,7 @@ export default {
      * CSS styles for position and size of the modal
      */
     modalStyle() {
-      documentDir = document.dir
+      const documentDir = document.dir
       if (documentDir === 'ltr') {
         return [
           this.stylesProp,
