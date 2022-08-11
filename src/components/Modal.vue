@@ -413,17 +413,32 @@ export default {
      * CSS styles for position and size of the modal
      */
     modalStyle() {
-      return [
-        this.stylesProp,
-        {
-          top: this.position.top + 'px',
-          left: this.position.left + 'px',
-          width: this.trueModalWidth + 'px',
-          height: this.isAutoHeight
-            ? this.autoHeight
-            : this.trueModalHeight + 'px'
-        }
-      ]
+      documentDir = document.dir
+      if(dir='ltr') {
+        return [
+          this.stylesProp,
+          {
+            top: this.position.top + 'px',
+            left: this.position.left + 'px',
+            width: this.trueModalWidth + 'px',
+            height: this.isAutoHeight
+              ? this.autoHeight
+              : this.trueModalHeight + 'px'
+          }
+        ]
+      } else {
+        return [
+          this.stylesProp,
+          {
+            top: this.position.top + 'px',
+            right: this.position.left + 'px',
+            width: this.trueModalWidth + 'px',
+            height: this.isAutoHeight
+              ? this.autoHeight
+              : this.trueModalHeight + 'px'
+          }
+        ]
+      }
     },
 
     isComponentReadyToBeDestroyed() {
