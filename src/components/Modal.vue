@@ -414,7 +414,7 @@ export default {
      */
     modalStyle() {
       documentDir = document.dir
-      if(dir='ltr') {
+      if(documentDir='ltr') {
         return [
           this.stylesProp,
           {
